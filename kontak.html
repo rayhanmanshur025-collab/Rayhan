@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak FrostyFood</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><i class="fas fa-snowflake"></i><h1>Frosty<span>Food</span></h1></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="kontak.html" class="active">Kontak</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Hubungi Kami</h2>
+                <p>Pesan sekarang atau tanyakan produk kami</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="info-card"><i class="fas fa-phone-alt"></i><h4>WhatsApp</h4><p>+62 812 3456 7890</p></div>
+                        <div class="info-card"><i class="fas fa-envelope"></i><h4>Email</h4><p>hello@frostyfood.com</p></div>
+                        <div class="info-card"><i class="fas fa-map-marker-alt"></i><h4>Alamat</h4><p>Jl. Kuliner No. 45, Surabaya</p></div>
+                        <div class="info-card"><i class="fas fa-clock"></i><h4>Jam Operasional</h4><p>Senin - Sabtu: 08.00 - 17.00</p></div>
+                        <div class="info-card"><i class="fas fa-truck"></i><h4>Gambar Pendukung</h4><img src="https://images.unsplash.com/photo-1604909052743-94e591986f8c?w=300&h=150&fit=crop" style="border-radius: 12px; width: 100%;" alt="Pengiriman Frozen"></div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Kirim Pesan ke WhatsApp</h3>
+                        <form id="whatsappForm">
+                            <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                            <input type="tel" id="telepon" placeholder="Nomor Telepon">
+                            <textarea id="pesan" rows="5" placeholder="Pesan Anda... Contoh: Saya pesan 2 Chicken Katsu" required></textarea>
+                            <button type="submit" class="btn-primary"><i class="fab fa-whatsapp"></i> Kirim via WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <h3>Lokasi Kami</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.877591419724!2d112.734524!3d-7.257472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f9ea1d8f3b1d%3A0x5c6a3e2f1a8c9b2e!2sSurabaya!5e0!3m2!1sid!2sid!4v1648000000000!5m2!1sid!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>... (sama seperti sebelumnya) ...</footer>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let nama = document.getElementById('nama').value;
+            let telepon = document.getElementById('telepon').value;
+            let pesan = document.getElementById('pesan').value;
+            let nomorWA = '6281234567890';
+            let text = `Halo FrostyFood%0A%0ANama: ${encodeURIComponent(nama)}%0ATelepon: ${encodeURIComponent(telepon)}%0APesan: ${encodeURIComponent(pesan)}`;
+            window.open(`https://api.whatsapp.com/send?phone=${nomorWA}&text=${text}`, '_blank');
+        });
+    </script>
+</body>
+</html>
